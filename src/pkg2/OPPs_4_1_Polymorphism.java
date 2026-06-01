@@ -25,7 +25,7 @@ class Child1 extends Parent {
     Benefit -> Compiler checks for mistakes.
     */
     @Override // form of metadata that provide supplemental information about a program without being part of the program's actual logic.
-    void role() {
+    void role() { // METHOD OVERRIDING -> Same method name | Same parameters | Same return type || BUT || Different implementation.
         System.out.println("I am a First Child.");
     }
 
