@@ -114,8 +114,12 @@ interface Car1 {
     void musicPlayer1();
 }
 
+interface HatchbackCar1 {
+    void videoPlayer1();
+}
+
 //    must INITIALISE all ABSTRACT METHOD of PARENT CLASS and all METHOD must be PUBLIC
-class WagonR1 implements Car1{
+class WagonR1 implements Car1, HatchbackCar1{ // we also IMPLEMENT MULTIPLE INTERFACE CLASS in single CLASS which is call as MULTI INHERITANCE
     public void driveCar1() {
         System.out.println("DRIVING.... ");
     }
@@ -123,40 +127,75 @@ class WagonR1 implements Car1{
     public void musicPlayer1() {
         System.out.println("MUSIC PLAYING.... ");
     }
+
+    public void videoPlayer1() {
+        System.out.println("VIDEO PLAYING.... ");
+    }
+
+    public void smartBreak1() {
+        System.out.println("APPLYING BREAK.... ");
+    }
 }
+
 public class OOPs_5_1_Abstraction {
     public static void main(String[] args) {
 
     /**----------------------------------- ABSTRACTION -----------------------------------**/
         /**++++++++++++++++ SINGLE LEVEL INHERITANCE with ABSTRACTION ++++++++++++++++**/
-        System.out.println("<-- By using SINGLE LEVEL INHERITANCE with ABSTRACTION -->");
+        System.out.println("\n<-- By using SINGLE LEVEL INHERITANCE with ABSTRACTION -->");
 //        we cannot create object of ABSTRACT CLASS
 //        Car ability = new Car(); // this will go to give a compile time error because wo only use ABSTRACT CLASS as REFERENCE only not for OBJECT
         Car ability = new WagonR();
+        System.out.println("Using Car Reference and WagonR Object ");
         ability.playMusic();
         ability.driveCar();
         ability.speedOfCar(40);
 
         /**++++++++++++++ Multi LEVEL INHERITANCE with ABSTRACTION +++++++++++++++++**/
-        System.out.println("<-- By using MULTI LEVEL INHERITANCE with ABSTRACTION -->");
+        System.out.println("\n<-- By using MULTI LEVEL INHERITANCE with ABSTRACTION -->");
 //        Car car = new Car(); // this will go to give a compile time error because wo only use ABSTRACT CLASS as REFERENCE only not for OBJECT
 //        Car carLamborghini = new Lamborghini(); // this will also go to give a compile time error because wo only use ABSTRACT CLASS as REFERENCE only not for OBJECT
         Car carModifiedLamborghini = new ModifiedLamborghini();
+        System.out.println("Using Car Reference and ModifiedLamborghini Object ");
         carModifiedLamborghini.playMusic();
         carModifiedLamborghini.driveCar();
         carModifiedLamborghini.speedOfCar(80);
 
         Lamborghini lamborghini = new ModifiedLamborghini(); // to use CONCRETE METHOD of "Lamborghini" ABSTRACT CLASS we have used this ClASS as REFERENCE and make OBJECT to Its CHILD CONCRETE CLASS
+        System.out.println("\nUsing Lamborghini Reference and ModifiedLamborghini Object");
         System.out.println(lamborghini.colorOfLamborghini("Red"));
 
-    /**----------------------------------- INTERFACE -----------------------------------**/
-//        INTERFACE REFERENCE + IMPLEMENTING CLASS OBJECT -> This is called UPCASTING.
-        Car1 carFeatures = new WagonR1();
-//        Calling methods declared in Interface
-        carFeatures.driveCar1();
-        carFeatures.musicPlayer1();
-
+        /**----------------------------------- INTERFACE -----------------------------------**/
+            /**+++++++++++++++++++++ SINGLE INTERFACE INHERITANCE +++++++++++++++++++++**/
+        System.out.println("\n<-- By using SINGLE INTERFACE INHERITANCE -->");
 //        We cannot create object of Interface directly.
 //        Car1 car = new Car1(); // Compile Time Error
+//        INTERFACE REFERENCE + IMPLEMENTING CLASS OBJECT -> This is called UPCASTING.
+        Car1 carReference = new WagonR1();
+//        Accessible Methods -> Only methods declared inside Car1.
+//        Calling methods declared in Interface
+        System.out.println("Using Car1 Reference");
+        carReference.driveCar1();
+        carReference.musicPlayer1();
+
+///        Reference Type decides -> Which methods are visible.
+///        Object Type decides -> Which implementation runs.
+
+        /**+++++++++++++++++++++ MULTIPLE INTERFACE INHERITANCE +++++++++++++++++++++**/
+        System.out.println("\n<-- By using MULTIPLE INTERFACE INHERITANCE -->");
+        HatchbackCar1 hatchbackCar1Reference = new WagonR1();
+//        Accessible Methods -> Only methods declared inside hatchbackCar1.
+//        Calling methods declared in Interface
+        System.out.println("Using HatchbackCar1 Reference");
+        hatchbackCar1Reference.videoPlayer1();
+
+        WagonR1 wagonR1Reference = new WagonR1();
+//        Can access -> ✔ Interface Methods || ✔ Class-Specific Methods
+//        Calling accessible methods by child reference
+        System.out.println("\nUsing WagonR1 Reference");
+        wagonR1Reference.driveCar1();
+        wagonR1Reference.musicPlayer1();
+        wagonR1Reference.videoPlayer1();
+        wagonR1Reference.smartBreak1();
     }
 }
