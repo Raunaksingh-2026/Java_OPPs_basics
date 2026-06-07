@@ -1,28 +1,39 @@
 package pkg2;
 
+/**===================================== ABSTRACTION =====================================**/
 /**
- * ===================================== ABSTRACTION =====================================
- **/
-//  ABSTRACT CLASS -> Used as a blueprint for child classes.
-//  -> Cannot create object directly.
-//    Can contain:
-//        ✔ Abstract Methods
-//        ✔ Concrete Methods
-//        ✔ Variables
-//        ✔ Constructors
-//  -> it can have both either CONCRETE or ABSTRACT METHOD
-//  -> use ABSTRACT keyword with CLASS and use EXTENDS keyword with another CLASS who wants to inherit feature of that CLASS
+ * ABSTRACTION -> Hide implementation
+ * ABSTRACT CLASS -> Used as a blueprint for child classes.
+     -> Cannot create object directly.
+     Can contain:
+     ✔ Abstract Methods
+     ✔ Concrete Methods
+     ✔ Variables
+     ✔ Constructors
+     -> it can have both either CONCRETE or ABSTRACT METHOD
+     -> use ABSTRACT keyword with CLASS and use EXTENDS keyword with another CLASS who wants to inherit feature of that CLASS
+ * INTERFACE -> Contract for classes
+ * extends
+      -> Class inherits Class
+      -> Interface inherits Interface
+ * implements
+      -> Class implements Interface
+
+ * UPCASTING -> Parent reference = Child object
+ * LAMBDA -> Functional Interface only
+ * FUNCTIONAL INTERFACE -> Exactly one abstract method
+**/
 
 abstract class Car {
 //    VARIABLE Can be private, protected, final, non-static, etc.
 
-//    wants to create [ METHOD without body or ABSTRACT METHOD ] by using ABSTRACT keyword -> child class must provide Implementation
+    //    wants to create [ METHOD without body or ABSTRACT METHOD ] by using ABSTRACT keyword -> child class must provide Implementation
     public abstract void driveCar();
 
-//    if we want to create another ABSTRACT METHOD then it is necessary to initialize it in CHILD CLASS
+    //    if we want to create another ABSTRACT METHOD then it is necessary to initialize it in CHILD CLASS
     public abstract void speedOfCar(int speed);
 
-//    create CONCRETE METHOD / METHOD with body [ METHOD with Body ] -> Child class can use it Directly
+    //    create CONCRETE METHOD / METHOD with body [ METHOD with Body ] -> Child class can use it Directly
     public void playMusic() {
         System.out.println("Playing music...");
     }
@@ -118,6 +129,13 @@ interface HatchbackCar1 {
     void videoPlayer1();
 }
 
+//    @FunctionalInterface -> Ensures that the interface contains exactly ONE abstract method.
+//    -> Required for Lambda Expressions.
+@FunctionalInterface
+interface SportsCar1 {
+    void accelerateCar1(int speed1);
+}
+
 //    must INITIALISE all ABSTRACT METHOD of PARENT CLASS and all METHOD must be PUBLIC
 class WagonR1 implements Car1, HatchbackCar1{ // we also IMPLEMENT MULTIPLE INTERFACE CLASS in single CLASS which is call as MULTI INHERITANCE
     public void driveCar1() {
@@ -197,5 +215,13 @@ public class OOPs_5_1_Abstraction {
         wagonR1Reference.musicPlayer1();
         wagonR1Reference.videoPlayer1();
         wagonR1Reference.smartBreak1();
+
+///        LAMBDA EXPRESSION -> Short form of implementing Functional Interface.
+///        LAMBDA FUNCTION can only be used with FUNCTIONAl INTERFACE which have EXACTLY 1 ABSTRACT METHOD
+///             Syntax --> [ (parameter) -> { body } ]
+//        creating LAMBDA EXPRESSION for INTERFACE CLASS
+        System.out.println("\nUsing LAMBDA EXPRESSION");
+        SportsCar1 feature1_4 = (int speed1) -> System.out.println("ACCELERATEING.... " + "> >> >>> " + speed1 + "Km/hr > >> >>> >>>>");
+        feature1_4.accelerateCar1(60);
     }
 }
