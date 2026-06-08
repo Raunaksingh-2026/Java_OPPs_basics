@@ -1,4 +1,4 @@
-package pkg2.OPPs_2_Inheritance;
+package pkg2.OOPs_2_Inheritance;
 
 import java.util.Scanner;
 

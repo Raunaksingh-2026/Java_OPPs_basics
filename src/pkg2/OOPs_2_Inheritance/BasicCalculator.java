@@ -1,4 +1,4 @@
-package pkg2.OPPs_2_Inheritance;
+package pkg2.OOPs_2_Inheritance;
 
 /**************************** SUPER CLASS / PARENT CLASS ****************************/
 //    SUPER CLASS / PARENT CLASS -> Other classes can inherit these methods using the "extends" keyword.

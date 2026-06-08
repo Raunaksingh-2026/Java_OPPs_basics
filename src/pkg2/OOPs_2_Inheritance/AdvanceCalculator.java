@@ -1,4 +1,4 @@
-package pkg2.OPPs_2_Inheritance;
+package pkg2.OOPs_2_Inheritance;
 
 /**************************** SUB CLASS / CHILD CLASS ****************************/
 //    SUB CLASS / CHILD CLASS -> This class inherits properties and methods from BasicCalculator class using "extends".
