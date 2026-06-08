@@ -12,7 +12,9 @@ package pkg2;
      ✔ Constructors
      -> it can have both either CONCRETE or ABSTRACT METHOD
      -> use ABSTRACT keyword with CLASS and use EXTENDS keyword with another CLASS who wants to inherit feature of that CLASS
+     -> Use Abstract Class -->> When classes share common behavior.
  * INTERFACE -> Contract for classes
+     -> Use Interface -->> When classes share common capability.
  * extends
       -> Class inherits Class
       -> Interface inherits Interface
@@ -20,6 +22,7 @@ package pkg2;
       -> Class implements Interface
 
  * UPCASTING -> Parent reference = Child object
+ ** DOWNCASTING -> Parent Reference = Child Reference --> Explicit cast required.
  * LAMBDA -> Functional Interface only
  * FUNCTIONAL INTERFACE -> Exactly one abstract method
 **/
@@ -179,6 +182,8 @@ public class OOPs_5_1_Abstraction {
         carModifiedLamborghini.driveCar();
         carModifiedLamborghini.speedOfCar(80);
 
+        System.out.println(carModifiedLamborghini instanceof Lamborghini); ///  [ instanceof ] -> Checks actual object type at runtime.
+
         Lamborghini lamborghini = new ModifiedLamborghini(); // to use CONCRETE METHOD of "Lamborghini" ABSTRACT CLASS we have used this ClASS as REFERENCE and make OBJECT to Its CHILD CONCRETE CLASS
         System.out.println("\nUsing Lamborghini Reference and ModifiedLamborghini Object");
         System.out.println(lamborghini.colorOfLamborghini("Red"));
@@ -216,12 +221,21 @@ public class OOPs_5_1_Abstraction {
         wagonR1Reference.videoPlayer1();
         wagonR1Reference.smartBreak1();
 
+//        Creating Anonymous Class for INTERFACE CLASS
+        System.out.println("\nANONYMOUS CLASS Without Using LAMBDA EXPRESSION");
+        SportsCar1 sportsCar1Reference1 = new SportsCar1() {
+            public void accelerateCar1(int speed) {
+                System.out.println("ACCELERATEING.... " + "> >> >>> " + speed + "Km/hr > >> >>> >>>>");
+            }
+        };
+        sportsCar1Reference1.accelerateCar1(50);
+
 ///        LAMBDA EXPRESSION -> Short form of implementing Functional Interface.
 ///        LAMBDA FUNCTION can only be used with FUNCTIONAl INTERFACE which have EXACTLY 1 ABSTRACT METHOD
 ///             Syntax --> [ (parameter) -> { body } ]
-//        creating LAMBDA EXPRESSION for INTERFACE CLASS
-        System.out.println("\nUsing LAMBDA EXPRESSION");
-        SportsCar1 feature1_4 = (int speed1) -> System.out.println("ACCELERATEING.... " + "> >> >>> " + speed1 + "Km/hr > >> >>> >>>>");
-        feature1_4.accelerateCar1(60);
+//        creating LAMBDA EXPRESSION of Anonymous Class for INTERFACE CLASS
+        System.out.println("\nANONYMOUS CLASS With Using LAMBDA EXPRESSION");
+        SportsCar1 sportsCar1Reference2 = (int speed1) -> System.out.println("ACCELERATEING.... " + "> >> >>> " + speed1 + "Km/hr > >> >>> >>>>");
+        sportsCar1Reference2.accelerateCar1(60);
     }
 }
