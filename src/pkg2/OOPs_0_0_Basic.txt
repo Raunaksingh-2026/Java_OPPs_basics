@@ -1,0 +1,101 @@
+Java is a class-based, object-oriented programming (OOP), Platform Independent language, designed to model real-world entities through objects that contain both data (attributes) and behavior (methods)
+        * WORA -> Write Once Run Anywhere
+    Features:
+        ✔ Object-Oriented
+        ✔ Platform Independent
+        ✔ Robust
+        ✔ Multithreaded
+        ✔ Portable
+===============================================================================
+
+CLASS -> A Class is a Blueprint or Template used to create Objects.
+    A Class contains:
+        -> Variables (State / Attributes)
+        -> Methods (Behavior)
+    SYNTAX ->
+              class Student {
+                 int age;
+                 String name;
+
+                 void study() {
+                 System.out.println("Studying...");
+                 }
+              }
+    NOTE -> Only ONE Public Class per Java File.
+         -> File name must match Public Class Name.
+===============================================================================
+
+OBJECT -> An Object is an Instance of a Class.
+       -> [ Student s1 = new Student(); ]
+    Components:
+        Student    -> Class Name
+        s1         -> Reference Variable
+        new        -> Object Creation Keyword
+        Student()  -> Constructor
+===============================================================================
+
+VARIABLE TYPES ->
+    1. Local Variable
+        -> Declared inside Method/Block
+        -> Exists only during Method Execution
+    2. Instance Variable
+        -> Declared inside Class but outside Methods
+        -> Separate copy for each Object
+    3. Static Variable
+        -> Belongs to Class
+        -> Shared among all Objects
+===============================================================================
+
+Method = Function inside a Class
+    Syntax ->
+        returnType methodName(parameters) {
+            // code
+        }
+Types -> Instance Method | Static Method
+===============================================================================
+
+CONSTRUCTOR -> Constructor initializes Objects || Constructor executes automatically.
+    Rules:
+        ✔ Same name as Class
+        ✔ No Return Type
+        ✔ Called Automatically
+Types -> 1. Default Constructor | 2. Parameterized Constructor
+Example -> [ Student s1 = new Student(); ]
+===============================================================================
+
+THIS KEYWORD --> this refers to Current Object.
+    Uses:
+        1. Access Current Object Variables
+           [ this.name = name; ]
+        2. Call Current Class Constructor
+           [ this(); ]
+NOTE --> this() must be first statement.
+
+STATIC -> Static Member belongs to Class not Object.
+Types ->
+    1. Static Variable
+    2. Static Method
+    3. Static Block
+    4. Static Nested Class
+Access -> ClassName.variable | ClassName.method()
+===============================================================================
+
+ENCAPSULATION = Data Hiding + Controlled Access
+Achieved Using ->
+    -> Private Variables
+    -> Public Getter/Setter Methods
+Benefits:
+    ✔ Security
+    ✔ Data Protection
+    ✔ Better Maintainability
+Example ->
+    private int age;
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+===============================================================================
