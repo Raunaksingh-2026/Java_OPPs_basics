@@ -21,6 +21,11 @@ CLASS -> A Class is a Blueprint or Template used to create Objects.
                  System.out.println("Studying...");
                  }
               }
+    TELUSKO -> 12:48:00
+    Types of Class ->
+            1. Sealed Class
+            2. Non Sealed Class
+            2. Data Carrier Class
     NOTE -> Only ONE Public Class per Java File.
          -> File name must match Public Class Name.
 ===============================================================================
@@ -51,7 +56,7 @@ Method = Function inside a Class
         returnType methodName(parameters) {
             // code
         }
-Types -> Instance Method | Static Method
+    Types -> Instance Method | Static Method
 ===============================================================================
 
 CONSTRUCTOR -> Constructor initializes Objects || Constructor executes automatically.
@@ -59,8 +64,8 @@ CONSTRUCTOR -> Constructor initializes Objects || Constructor executes automatic
         ✔ Same name as Class
         ✔ No Return Type
         ✔ Called Automatically
-Types -> 1. Default Constructor | 2. Parameterized Constructor
-Example -> [ Student s1 = new Student(); ]
+    Types -> 1. Default Constructor | 2. Parameterized Constructor
+    Example -> [ Student s1 = new Student(); ]
 ===============================================================================
 
 THIS KEYWORD --> this refers to Current Object.
@@ -69,33 +74,90 @@ THIS KEYWORD --> this refers to Current Object.
            [ this.name = name; ]
         2. Call Current Class Constructor
            [ this(); ]
-NOTE --> this() must be first statement.
+    NOTE --> this() must be first statement.
 
 STATIC -> Static Member belongs to Class not Object.
-Types ->
-    1. Static Variable
-    2. Static Method
-    3. Static Block
-    4. Static Nested Class
-Access -> ClassName.variable | ClassName.method()
+    Types ->
+        1. Static Variable
+        2. Static Method
+        3. Static Block
+        4. Static Nested Class
+    Access -> ClassName.variable | ClassName.method()
 ===============================================================================
 
+ENCAPSULATION : It involves bundling data (variables) and the methods that operate on that data into a single unit, known as a class. It acts as a protective shield that prevents direct access to an object's internal state from outside code.
 ENCAPSULATION = Data Hiding + Controlled Access
-Achieved Using ->
-    -> Private Variables
-    -> Public Getter/Setter Methods
-Benefits:
-    ✔ Security
-    ✔ Data Protection
-    ✔ Better Maintainability
-Example ->
-    private int age;
+    Achieved Using ->
+        -> Private Variables
+        -> Public Getter/Setter Methods
+    Benefits:
+        ✔ Security
+        ✔ Data Protection
+        ✔ Better Maintainability
+    Example ->
+        private int age;
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+        public void setAge(int age) {
+            this.age = age;
+        }
 
-    public int getAge() {
-        return age;
-    }
+        public int getAge() {
+            return age;
+        }
+===============================================================================
+
+INHERITANCE -> allows Child Class to reuse Parent Class Features.
+    Keyword Used -> extends
+    Example ->
+        class Parent {
+        }
+        class Child extends Parent {
+        }
+    Benefits ->
+        ✔ Code Reusability
+        ✔ Method Reuse
+        ✔ Easy Maintenance
+    Types Supported in Java ->
+        1. Single Inheritance
+        2. Multilevel Inheritance
+        3. Hierarchical Inheritance
+    Not Supported Directly -> ✘ Multiple Inheritance using Classes
+    Supported Through --> ✔ Interfaces
+===============================================================================
+
+SUPER KEYWORD -> refers to Parent Class Object.
+    Uses ->
+        1. Access Parent Variable
+            super.age
+        2. Access Parent Method
+            super.show()
+        3. Call Parent Constructor
+            super();
+    NOTE -> super() must be first statement.
+===============================================================================
+
+POLYMORPHISM = One Interface, Many Forms
+    Types ->
+        1. Compile-Time Polymorphism
+            -> Method Overloading
+        2. Runtime Polymorphism
+            -> Method Overriding
+===============================================================================
+
+METHOD OVERLOADING -> Same Method Name but Different Parameters
+    Examples ->
+        add(int a, int b)
+        add(int a, int b, int c)
+        add(double a, double b)
+    Feature -> Compile-Time Polymorphism
+===============================================================================
+
+METHOD OVERRIDING -> Same Method Signature but Different Implementation
+    Feature -> Runtime Polymorphism
+    Example ->
+        Parent ref = new Child();
+        ref.show();
+    Method Executed ->
+        -> Depends on Object Type
+        -> Not Reference Type
 ===============================================================================
