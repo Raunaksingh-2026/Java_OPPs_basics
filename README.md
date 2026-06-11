@@ -8,7 +8,7 @@
 
 </div>
 
----
+----
 
 # 📚 About This Repository
 
@@ -27,3 +27,59 @@ The main goal of this repository is :
 
 ```text
 Learning concepts deeply with practical examples.
+```
+
+----
+
+## Folder Structure
+
+```text
+objectOrientedProgrammingInJava
+│
+├── src
+│   └── pkg2
+│
+│       ├── OOPs_2_Inheritance
+│       │   ├── BasicCalculator.java
+│       │   ├── AdvanceCalculator.java
+│       │   └── OOPs_2_1_Inheritance.java
+│       ├── OOPs_0_0_Basics.txt
+│       ├── OOPs_1_1_ClassAndObject.java
+│       ├── OOPs_1_2_ClassAndObjectBasics.java
+│       ├── OOPs_1_3_ConstructorsAndInnerClasses.java
+│       ├── OOPs_3_1_Encapsulation.java
+│       ├── OOPs_4_1_Polymorphism.java
+│       └── OOPs_5_1_Abstraction.java
+│      
+```
+
+---
+
+## Technologies Used
+
+- Java
+- IntelliJ IDEA
+- Git & GitHub
+
+---
+
+## Goals
+
+- Improve OPPs fundamentals
+- Strengthen problem-solving skills
+- Practice easy and clean coding
+- Learn Data Structures & Algorithms
+
+---
+
+## Author
+
+Raunak Singh
+
+---
+
+## Connect with Me
+
+GitHub : Updated soon
+
+
