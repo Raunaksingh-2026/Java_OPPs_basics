@@ -151,7 +151,6 @@ METHOD OVERLOADING -> Same Method Name but Different Parameters
         add(double a, double b)
     Feature -> Compile-Time Polymorphism
 ===============================================================================
-
 METHOD OVERRIDING -> Same Method Signature but Different Implementation
     Feature -> Runtime Polymorphism
     Example ->
@@ -160,4 +159,149 @@ METHOD OVERRIDING -> Same Method Signature but Different Implementation
     Method Executed ->
         -> Depends on Object Type
         -> Not Reference Type
+===============================================================================
+
+DYNAMIC METHOD DISPATCH ->
+    -> [ Parent ref = Child Object ]
+    Example ->
+        Animal a = new Dog();
+        a.sound();
+    Benefits -> Runtime Polymorphism
+    Rule ->
+    * Method Call Depends On --> ✔ Object Type
+    * Method Visibility Depends On --> ✔ Reference Type
+===============================================================================
+
+FINAL VARIABLE -> Value Cannot Change
+    [ final int age = 20; ]
+
+FINAL METHOD -> Cannot be Overridden
+    [ final void show() { } ]
+
+FINAL CLASS -> Cannot be Inherited
+    [ final class Demo { } ]
+Examples --> String | Math
+===============================================================================
+
+ABSTRACTION = Showing Essential Features BUT Hiding Implementation Details
+    Achieved By ->
+        1. Abstract Class
+        2. Interface
+===============================================================================
+
+ABSTRACT keyword :- The abstract keyword in Java is a NON-ACCESS MODIFIER used to achieve ABSTRACTION.
+    * It is used to define CLASSES and METHODS that act as TEMPLATE for other CLASSES
+    * A method or class cannot be both abstract and final because abstract requires inheritance while final prevents it.
+    Can Contain ->
+        ✔ Abstract Methods
+        ✔ Concrete Methods
+        ✔ Constructors
+        ✔ Variables
+    * Cannot Create Object Directly
+    Example ->
+        abstract class Car {
+            abstract void drive();
+            void music() {
+            }
+        }
+    NOTE ->
+        * Abstract Class can have 0 or more Abstract Methods.
+        * It is necessary to use ABSTRACT CLASS for declaring ABSTRACT METHOD but not vice versa
+===============================================================================
+
+INTERFACE Keyword ->
+    Purpose -> Defines Contract for Classes.
+    Contains ->
+        ✔ Abstract Methods
+        ✔ Default Methods
+        ✔ Static Methods
+        ✔ Constants
+    * Variables are Automatically -> public static final
+    * Methods are Automatically -> public abstract
+    Example ->
+        interface Car {
+            void drive();
+        }
+===============================================================================
+
+MULTIPLE INHERITANCE USING INTERFACE ->
+    interface A {
+    }
+    interface B {
+    }
+    class C implements A, B {
+    }
+    * Java Supports Multiple Inheritance --> ONLY Through Interfaces.
+===============================================================================
+
+FUNCTIONAL INTERFACE -> Contains Exactly ONE Abstract Method.
+    Annotation --> @FunctionalInterface
+    Example ->
+        @FunctionalInterface
+        interface Vehicle {
+            void accelerate();
+        }
+    Used For -> Lambda Expressions
+===============================================================================
+
+LAMBDA EXPRESSION -> Shorter Way To Implement Functional Interface.
+    Traditional -->
+        Vehicle v = new Vehicle() {
+            public void accelerate() {
+                System.out.println("Run");
+            }
+        };
+    Lambda -->>
+        Vehicle v =
+                () -> System.out.println("Run");
+    Benefits:
+        ✔ Less Code
+        ✔ Readability
+        ✔ Functional Programming
+===============================================================================
+
+INNER CLASS -> Class Inside Another Class.
+    Types ->
+        1. Non-Static Inner Class
+        2. Static Nested Class
+        3. Local Inner Class
+        4. Anonymous Inner Class
+    Benefits ->
+        -> Better Grouping
+        -> Encapsulation
+===============================================================================
+
+AUTOBOXING ->
+    [ Primitive -> Wrapper ]
+    -> int num = 10;
+    -> Integer value = num;
+
+UNBOXING
+    [ Wrapper -> Primitive ]
+    -> Integer value = 10;
+    -> int num = value;
+
+Wrapper Classes ->
+    int      -> Integer
+    double   -> Double
+    char     -> Character
+    boolean  -> Boolean
+===============================================================================
+
+PACKAGE = Collection of Related Classes.
+    Benefits ->
+    ✔ Avoid Naming Conflicts
+    ✔ Better Organization
+    ✔ Access Control
+    Example ->
+        -> package com.raunak.oops;
+    IMPORT ->
+        -> import java.util.Scanner;
+===============================================================================
+
+OOPs PILLARS ->
+    1. Encapsulation -> Data Hiding
+    2. Inheritance -> Code Reusability
+    3. Polymorphism -> Many Forms
+    4. Abstraction -> Hide Implementation
 ===============================================================================
